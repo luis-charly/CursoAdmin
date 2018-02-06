@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/LaravelAdmin.iml" filepath="$PROJECT_DIR$/.idea/LaravelAdmin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../plantillaCompleta/.idea/plantillaCompleta.iml" filepath="$PROJECT_DIR$/../plantillaCompleta/.idea/plantillaCompleta.iml" />
     </modules>
   </component>
 </project>
