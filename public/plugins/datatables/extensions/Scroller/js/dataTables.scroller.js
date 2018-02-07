@@ -192,7 +192,7 @@ var Scroller = function ( oDTSettings, oOpts ) {
 	};
 
 	// @todo The defaults should extend a `c` property and the internal settings
-	// only held in the `s` property. At the moment they are mixed
+	// only held in the `user` property. At the moment they are mixed
 	this.s = $.extend( this.s, Scroller.oDefaults, oOpts );
 
 	// Workaround for row height being read from height object (see above comment)
@@ -214,7 +214,7 @@ var Scroller = function ( oDTSettings, oOpts ) {
 	/* Attach the instance to the DataTables instance so it can be accessed */
 	this.s.dt.oScroller = this;
 
-	/* Let's do it */
+	/* Let'user do it */
 	this._fnConstruct();
 };
 
@@ -333,7 +333,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 		// We need to know if the table will redraw or not before doing the
 		// scroll. If it will not redraw, then we need to use the currently
 		// displayed table, and scroll with the physical pixels. Otherwise, we
-		// need to calculate the table's new position from the virtual
+		// need to calculate the table'user new position from the virtual
 		// transform.
 		var preRows = ((this.s.displayBuffer-1)/2) * this.s.viewportRows;
 		var drawRow = iRow - preRows;
@@ -368,7 +368,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 
 	/**
 	 * Calculate and store information about how many rows are to be displayed
-	 * in the scrolling viewport, based on current dimensions in the browser's
+	 * in the scrolling viewport, based on current dimensions in the browser'user
 	 * rendering. This can be particularly useful if the table is initially
 	 * drawn in a hidden element - for example in a tab.
 	 *  @param {bool} [bRedraw=true] Redraw the table automatically after the recalculation, with
@@ -376,7 +376,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 *  @returns {void}
 	 *  @example
 	 *    $(document).ready(function() {
-	 *      // Make the example container hidden to throw off the browser's sizing
+	 *      // Make the example container hidden to throw off the browser'user sizing
 	 *      document.getElementById('container').style.display = "none";
 	 *      var oTable = $('#example').dataTable( {
 	 *        "sScrollY": "200px",
@@ -579,10 +579,10 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 			return;
 		}
 
-		/* Update the table's information display for what is now in the viewport */
+		/* Update the table'user information display for what is now in the viewport */
 		this._fnInfo();
 
-		/* We don't want to state save on every scroll event - that's heavy
+		/* We don't want to state save on every scroll event - that'user heavy
 		 * handed, so use a timeout to update the state saving only when the
 		 * scrolling has finished
 		 */
@@ -799,7 +799,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 
 		this.s.skip = false;
 
-		// Restore the scrolling position that was saved by DataTable's state
+		// Restore the scrolling position that was saved by DataTable'user state
 		// saving Note that this is done on the second draw when data is Ajax
 		// sourced, and the first draw when DOM soured
 		if ( this.s.dt.oFeatures.bStateSave && this.s.dt.oLoadedState !== null &&
@@ -1038,7 +1038,7 @@ Scroller.defaults = /** @lends Scroller.defaults */{
 	"trace": false,
 
 	/**
-	 * Scroller will attempt to automatically calculate the height of rows for it's internal
+	 * Scroller will attempt to automatically calculate the height of rows for it'user internal
 	 * calculations. However the height that is used can be overridden using this parameter.
 	 *  @type     int|string
 	 *  @default  auto
@@ -1080,8 +1080,8 @@ Scroller.defaults = /** @lends Scroller.defaults */{
 	 * rows that will be shown in "near scrolling" (i.e. just beyond the current display area).
 	 * The value is based upon the number of rows that can be displayed in the viewport (i.e.
 	 * a value of 1), and will apply the display range to records before before and after the
-	 * current viewport - i.e. a factor of 3 will allow Scroller to pre-fetch 1 viewport's worth
-	 * of rows before the current viewport, the current viewport's rows and 1 viewport's worth
+	 * current viewport - i.e. a factor of 3 will allow Scroller to pre-fetch 1 viewport'user worth
+	 * of rows before the current viewport, the current viewport'user rows and 1 viewport'users worth
 	 * of rows after the current viewport. Adjusting this value can be useful for ensuring
 	 * smooth scrolling based on your data set.
 	 *  @type     int

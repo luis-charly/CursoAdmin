@@ -580,7 +580,7 @@ ColReorder.prototype = {
 	 *    $.fn.dataTable.ColReorder( '#example' ).fnOrder( curr );
 	 *
 	 *  @example
-	 *    // Reverse the table's order
+	 *    // Reverse the table'user order
 	 *    $.fn.dataTable.ColReorder( '#example' ).fnOrder(
 	 *      $.fn.dataTable.ColReorder( '#example' ).fnOrder().reverse()
 	 *    );
@@ -1000,8 +1000,8 @@ ColReorder.prototype = {
 		var iToPoint = 0;
 		for ( var i=0, iLen=aoColumns.length ; i<iLen ; i++ )
 		{
-			/* For the column / header in question, we want it's position to remain the same if the
-			 * position is just to it's immediate left or right, so we only incremement the counter for
+			/* For the column / header in question, we want it'user position to remain the same if the
+			 * position is just to it'user immediate left or right, so we only incremement the counter for
 			 * other columns
 			 */
 			if ( i != this.s.mouse.fromIndex )
@@ -1170,7 +1170,7 @@ ColReorder.defaults = {
 	aiOrder: null,
 
 	/**
-	 * Redraw the table's column ordering as the end user draws the column
+	 * Redraw the table'user column ordering as the end users draws the column
 	 * (`true`) or wait until the mouse is released (`false` - default). Note
 	 * that this will perform a redraw on each reordering, which involves an
 	 * Ajax request each time if you are using server-side processing in

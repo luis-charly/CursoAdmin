@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class UserController extends Controller
 {
@@ -16,7 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::All();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -37,7 +39,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            User::create([
+            'name' => $request ['name'],
+            'email' => $request ['email'],
+            'password' => bcrypt($request ['password']),
+        ]);
+
+        return redirect ('/users')->with('message', 'store');
     }
 
     /**
@@ -59,7 +67,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        //var_dump($user);
+        return view('users.edit', ['user'=>$user]);
     }
 
     /**

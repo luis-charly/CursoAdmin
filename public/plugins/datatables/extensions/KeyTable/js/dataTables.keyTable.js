@@ -62,7 +62,7 @@ KeyTable = function ( oInit )
 
 	/*
 	 * Function: fnGetCurrentPosition
-	 * Purpose:  Get the currently focused cell's position
+	 * Purpose:  Get the currently focused cell'user position
 	 * Returns:  array int: [ x, y ]
 	 * Inputs:   void
 	 */
@@ -74,7 +74,7 @@ KeyTable = function ( oInit )
 
 	/*
 	 * Function: fnGetCurrentData
-	 * Purpose:  Get the currently focused cell's data (innerHTML)
+	 * Purpose:  Get the currently focused cell'user data (innerHTML)
 	 * Returns:  string: - data requested
 	 * Inputs:   void
 	 */
@@ -439,7 +439,7 @@ KeyTable = function ( oInit )
 		$(nTarget).addClass( _sFocusClass );
 		$(nTarget).parent().addClass( _sFocusClass );
 
-		/* If it's a DataTable then we need to jump the paging to the relevant page */
+		/* If it'user a DataTable then we need to jump the paging to the relevant page */
 		var oSettings;
 		if ( _oDatatable )
 		{

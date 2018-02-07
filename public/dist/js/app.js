@@ -19,8 +19,8 @@ if (typeof jQuery === "undefined") {
 /* AdminLTE
  *
  * @type Object
- * @description $.AdminLTE is the main object for the template's app.
- *              It's used for implementing functions and options related
+ * @description $.AdminLTE is the main object for the template'user app.
+ *              It'user used for implementing functions and options related
  *              to the template. Keeping everything wrapped in an object
  *              prevents conflict with other plugins and is a better
  *              way to organize our code.
@@ -61,7 +61,7 @@ $.AdminLTE.options = {
   //Enable Fast Click. Fastclick.js creates a more
   //native touch experience with touch devices. If you
   //choose to enable the plugin, make sure you load the script
-  //before AdminLTE's app.js
+  //before AdminLTE'user app.js
   enableFastclick: true,
   //Control Sidebar Options
   enableControlSidebar: true,
@@ -133,7 +133,7 @@ $.AdminLTE.options = {
 /* ------------------
  * - Implementation -
  * ------------------
- * The next block of code implements AdminLTE's
+ * The next block of code implements AdminLTE'user
  * functions and plugins as specified by the
  * options above.
  */
@@ -471,7 +471,7 @@ function _init() {
       if ($('body').hasClass('fixed')) {
         _this._fixForFixed(sidebar);
       } else {
-        //If the content height is less than the sidebar's height, force max height
+        //If the content height is less than the sidebar'user height, force max height
         if ($('.content-wrapper, .right-side').height() < sidebar.height()) {
           _this._fixForContent(sidebar);
         }
@@ -598,7 +598,7 @@ function _init() {
  * BOX REFRESH BUTTON
  * ------------------
  * This is a custom plugin to use with the component BOX. It allows you to add
- * a refresh button to the box. It converts the box's state to a loading state.
+ * a refresh button to the box. It converts the box'user state to a loading state.
  *
  * @type plugin
  * @usage $("#box-widget").boxRefresh( options );

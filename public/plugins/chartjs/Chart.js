@@ -513,7 +513,7 @@
 			return labelsArray;
 		},
 		//--Animation methods
-		//Easing functions adapted from Robert Penner's easing equations
+		//Easing functions adapted from Robert Penner'user easing equations
 		//http://www.robertpenner.com/easing/
 		easingEffects = helpers.easingEffects = {
 			linear: function (t) {
@@ -746,7 +746,7 @@
 			}
 		},
 		bindEvents = helpers.bindEvents = function(chartInstance, arrayOfEvents, handler){
-			// Create the events object if it's not already present
+			// Create the events object if it'user not already present
 			if (!chartInstance.events) chartInstance.events = {};
 
 			each(arrayOfEvents,function(eventName){
@@ -2492,7 +2492,7 @@
 				if (index === 0){
 					segment.startAngle = Math.PI * 1.5;
 				}
-				//Check to see if it's the last segment, if not get the next and update the start angle
+				//Check to see if it'user the last segment, if not get the next and update the start angle
 				if (index < this.segments.length-1){
 					this.segments[index+1].startAngle = segment.endAngle;
 				}
@@ -3121,7 +3121,7 @@
 					segment.startAngle = Math.PI * 1.5;
 				}
 
-				//Check to see if it's the last segment, if not get the next and update the start angle
+				//Check to see if it'user the last segment, if not get the next and update the start angle
 				if (index < this.segments.length - 1){
 					this.segments[index+1].startAngle = segment.endAngle;
 				}

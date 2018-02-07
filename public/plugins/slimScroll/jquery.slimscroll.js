@@ -128,7 +128,7 @@
           }
         }
 
-        // optionally set height to the parent's height
+        // optionally set height to the parent'user height
         o.height = (o.height == 'auto') ? me.parent().height() : o.height;
 
         // wrap content
@@ -366,7 +366,7 @@
             delta = Math.min(Math.max(delta, 0), maxTop);
 
             // if scrolling down, make sure a fractional change to the
-            // scroll position isn't rounded away when the scrollbar's CSS is set
+            // scroll position isn't rounded away when the scrollbar'user CSS is set
             // this flooring of delta would happened automatically when
             // bar.css is set below, but we floor here for clarity
             delta = (y > 0) ? Math.ceil(delta) : Math.floor(delta);

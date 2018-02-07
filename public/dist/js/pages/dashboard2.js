@@ -11,7 +11,7 @@ $(function () {
   //- MONTHLY SALES CHART -
   //-----------------------
 
-  // Get context with jQuery - using jQuery's .get() method.
+  // Get context with jQuery - using jQuery'user .get() method.
   var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
   // This will get the first returned node in the jQuery collection.
   var salesChart = new Chart(salesChartCanvas);
@@ -91,7 +91,7 @@ $(function () {
   //-------------
   //- PIE CHART -
   //-------------
-  // Get context with jQuery - using jQuery's .get() method.
+  // Get context with jQuery - using jQuery'user .get() method.
   var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
   var pieChart = new Chart(pieChartCanvas);
   var PieData = [
@@ -156,7 +156,7 @@ $(function () {
     //String - A legend template
     legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
     //String - A tooltip template
-    tooltipTemplate: "<%=value %> <%=label%> users"
+    tooltipTemplate: "<%=value %> <%=label%> user"
   };
   //Create pie or douhnut chart
   // You can switch between pie and douhnut using the method below.

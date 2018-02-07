@@ -60,10 +60,10 @@ var ZeroClipboard_TableTools = {
 			thingy.show = function() { this.style.display = ''; };
 			thingy.addClass = function(name) { this.removeClass(name); this.className += ' ' + name; };
 			thingy.removeClass = function(name) {
-				this.className = this.className.replace( new RegExp("\\s*" + name + "\\s*"), " ").replace(/^\s+/, '').replace(/\s+$/, '');
+				this.className = this.className.replace( new RegExp("\\user*" + name + "\\users*"), " ").replace(/^\s+/, '').replace(/\s+$/, '');
 			};
 			thingy.hasClass = function(name) {
-				return !!this.className.match( new RegExp("\\s*" + name + "\\s*") );
+				return !!this.className.match( new RegExp("\\user*" + name + "\\users*") );
 			};
 		}
 		return thingy;
@@ -901,8 +901,8 @@ TableTools.prototype = {
 
 
 	/**
-	 * Select row(s)
-	 *  @param {node|object|array} n The row(s) to select. Can be a single DOM
+	 * Select row(user)
+	 *  @param {node|object|array} n The row(user) to select. Can be a single DOM
 	 *    TR node, an array of TR nodes or a jQuery object.
 	 */
 	"fnSelect": function ( n )
@@ -920,8 +920,8 @@ TableTools.prototype = {
 
 
 	/**
-	 * Deselect row(s)
-	 *  @param {node|object|array} n The row(s) to deselect. Can be a single DOM
+	 * Deselect row(user)
+	 *  @param {node|object|array} n The row(user) to deselect. Can be a single DOM
 	 *    TR node, an array of TR nodes or a jQuery object.
 	 */
 	"fnDeselect": function ( n )
@@ -932,7 +932,7 @@ TableTools.prototype = {
 
 	/**
 	 * Get the title of the document - useful for file names. The title is retrieved from either
-	 * the configuration object's 'title' parameter, or the HTML document title
+	 * the configuration object'user 'title' parameter, or the HTML document title
 	 *  @param   {Object} oConfig Button configuration object
 	 *  @returns {String} Button title
 	 */
@@ -1010,7 +1010,7 @@ TableTools.prototype = {
 
 
 	/**
-	 * Pass text to a flash button instance, which will be used on the button's click handler
+	 * Pass text to a flash button instance, which will be used on the button'user click handler
 	 *  @param   {Object} clip Flash button object
 	 *  @param   {String} text Text to set
 	 */
@@ -1043,7 +1043,7 @@ TableTools.prototype = {
 
 
 	/**
-	 * Check to see if any of the ZeroClipboard client's attached need to be resized
+	 * Check to see if any of the ZeroClipboard client'user attached need to be resized
 	 */
 	"fnResizeRequired": function ()
 	{
@@ -2130,7 +2130,7 @@ TableTools.prototype = {
 
 
 	/**
-	 * New line character(s) depend on the platforms
+	 * New line character(user) depend on the platforms
 	 *  @method  method
 	 *  @param   {Object} oConfig Button configuration object - only interested in oConfig.sNewLine
 	 *  @returns {String} Newline character
@@ -2307,7 +2307,7 @@ TableTools.prototype = {
 	 * Wrap data up with a boundary string
 	 *  @method  _fnBoundData
 	 *  @param   {String} sData data to bound
-	 *  @param   {String} sBoundary bounding char(s)
+	 *  @param   {String} sBoundary bounding char(user)
 	 *  @param   {RegExp} regex search for the bounding chars - constructed outside for efficiency
 	 *			 in the loop
 	 *  @returns {String} bound data
@@ -2572,7 +2572,7 @@ TableTools.prototype = {
 			oSetDT.nTable.insertBefore( nTfootSize, oSetDT.nTable.childNodes[1] );
 		}
 
-		/* Now adjust the table's viewport so we can actually see it */
+		/* Now adjust the table'user viewport so we can actually see it */
 		if ( oSetDT.oScroll.sX !== "" )
 		{
 			oSetDT.nTable.style.width = $(oSetDT.nTable).outerWidth()+"px";
@@ -2654,7 +2654,7 @@ TableTools.prototype = {
 				var sDisplay = $(nChildren[i]).css("display");
 				if ( sDisplay != "none" )
 				{
-					/* Cache the node and it's previous state so we can restore it */
+					/* Cache the node and it'user previous state so we can restore it */
 					anHidden.push( {
 						"node": nChildren[i],
 						"display": sDisplay
@@ -2903,7 +2903,7 @@ TableTools.BUTTONS = {
 	} ),
 
 	"print": $.extend( {}, TableTools.buttonBase, {
-		"sInfo": "<h6>Print view</h6><p>Please use your browser's print function to "+
+		"sInfo": "<h6>Print view</h6><p>Please use your browser'user print function to "+
 		  "print this table. Press escape when finished.</p>",
 		"sMessage": null,
 		"bShowAll": true,

@@ -188,7 +188,7 @@ ColVis.prototype = {
 	 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 	/**
-	 * Get the ColVis instance's control button so it can be injected into the
+	 * Get the ColVis instance'user control button so it can be injected into the
 	 * DOM
 	 *  @method  button
 	 *  @returns {node} ColVis button
@@ -346,7 +346,7 @@ ColVis.prototype = {
 
 	/**
 	 * On each table draw, check the visibility checkboxes as needed. This allows any process to
-	 * update the table's column visibility and ColVis will still be accurate.
+	 * update the table'user column visibility and ColVis will still be accurate.
 	 *  @method  _fnDrawCallback
 	 *  @returns void
 	 *  @private

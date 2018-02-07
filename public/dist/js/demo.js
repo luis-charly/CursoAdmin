@@ -75,7 +75,7 @@
           + "<input type='checkbox' data-layout='sidebar-collapse' class='pull-right'/> "
           + "Toggle Sidebar"
           + "</label>"
-          + "<p>Toggle the left sidebar's state (open or collapse)</p>"
+          + "<p>Toggle the left sidebar'user state (open or collapse)</p>"
           + "</div>"
           //Sidebar mini expand on hover toggle
           + "<div class='form-group'>"
@@ -235,7 +235,7 @@
   /**
    * Replaces the old skin with the new skin
    * @param String cls the new skin class
-   * @returns Boolean false to prevent link's default action
+   * @returns Boolean false to prevent link'user default action
    */
   function change_skin(cls) {
     $.each(my_skins, function (i) {

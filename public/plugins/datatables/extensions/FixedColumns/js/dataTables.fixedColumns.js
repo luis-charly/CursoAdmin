@@ -268,7 +268,7 @@ var FixedColumns = function ( dt, init ) {
 	/* Attach the instance to the DataTables instance so it can be accessed easily */
 	dtSettings._oFixedColumns = this;
 
-	/* Let's do it */
+	/* Let'user do it */
 	if ( ! dtSettings._bInitComplete )
 	{
 		dtSettings.oApi._fnCallbackReg( dtSettings, 'aoInitComplete', function () {
@@ -331,10 +331,10 @@ FixedColumns.prototype = /** @lends FixedColumns.prototype */{
 
 
 	/**
-	 * Mark a row such that it's height should be recalculated when using 'semiauto' row
+	 * Mark a row such that it'user height should be recalculated when using 'semiauto' row
 	 * height matching. This function will have no effect when 'none' or 'auto' row height
 	 * matching is used.
-	 *  @param   {Node} nTr TR element that should have it's height recalculated
+	 *  @param   {Node} nTr TR element that should have it'user height recalculated
 	 *  @returns {void}
 	 *  @example
 	 *      var table = $('#example').dataTable( {
@@ -357,7 +357,7 @@ FixedColumns.prototype = /** @lends FixedColumns.prototype */{
 
 	/**
 	 * Set the height of a given row - provides cross browser compatibility
-	 *  @param   {Node} nTarget TR element that should have it's height recalculated
+	 *  @param   {Node} nTarget TR element that should have it'user height recalculated
 	 *  @param   {int} iHeight Height in pixels to set
 	 *  @returns {void}
 	 *  @example
@@ -606,7 +606,7 @@ FixedColumns.prototype = /** @lends FixedColumns.prototype */{
 				var iWidth = th.outerWidth();
 
 				// When working with the left most-cell, need to add on the
-				// table's border to the outerWidth, since we need to take
+				// table'user border to the outerWidth, since we need to take
 				// account of it, but it isn't in any cell
 				if ( that.s.aiOuterWidths.length === 0 ) {
 					border = $(that.s.dt.nTable).css('border-left-width');
@@ -808,7 +808,7 @@ FixedColumns.prototype = /** @lends FixedColumns.prototype */{
 
 
 	/**
-	 * Get information about the DataTable's scrolling state - specifically if the table is scrolling
+	 * Get information about the DataTable'user scrolling state - specifically if the table is scrolling
 	 * on either the x or y axis, and also the scrollbar width.
 	 *  @returns {object} Information about the DataTables scrolling state with the properties:
 	 *    'x', 'y' and 'bar'
@@ -1197,7 +1197,7 @@ FixedColumns.prototype = /** @lends FixedColumns.prototype */{
 			this._fnEqualiseHeights( 'tfoot', this.dom.footer, oClone.footer );
 		}
 
-		/* Equalise the column widths between the header footer and body - body get's priority */
+		/* Equalise the column widths between the header footer and body - body get'user priority */
 		var anUnique = dt.oApi._fnGetUniqueThs( dt, $('>thead', oClone.header)[0] );
 		$(anUnique).each( function (i) {
 			iColumn = aiColumns[i];
@@ -1391,8 +1391,8 @@ FixedColumns.version = "3.0.4";
  * @event
  * @param {event} e jQuery event object
  * @param {object} o Event parameters from FixedColumns
- * @param {object} o.leftClone Instance's object dom.clone.left for easy reference. This object contains references to the left fixed clumn column's nodes
- * @param {object} o.rightClone Instance's object dom.clone.right for easy reference. This object contains references to the right fixed clumn column's nodes
+ * @param {object} o.leftClone Instance'user object dom.clone.left for easy reference. This object contains references to the left fixed clumn column'users nodes
+ * @param {object} o.rightClone Instance'user object dom.clone.right for easy reference. This object contains references to the right fixed clumn column'users nodes
  */
 
 

@@ -135,7 +135,7 @@ Responsive.prototype = {
 		// Determine which columns are already hidden, and should therefore
 		// remain hidden. todo - should this be done? See thread 22677
 		//
-		// this.s.alwaysHidden = dt.columns(':hidden').indexes();
+		// this.user.alwaysHidden = dt.columns(':hidden').indexes();
 
 		this._classLogic();
 		this._resizeAuto();
@@ -446,7 +446,7 @@ Responsive.prototype = {
 				return;
 			}
 
-			// Check that the row is actually a DataTable's controlled node
+			// Check that the row is actually a DataTable'user controlled node
 			if ( ! dt.row( $(this).closest('tr') ).length ) {
 				return;
 			}

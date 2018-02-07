@@ -7,7 +7,7 @@ return [
     | Mail Driver
     |--------------------------------------------------------------------------
     |
-    | Laravel supports both SMTP and PHP's "mail" function as drivers for the
+    | Laravel supports both SMTP and PHP'user "mail" function as drivers for the
     | sending of e-mail. You may specify which one you're using throughout
     | your application here. By default, Laravel is setup for SMTP mail.
     |
@@ -36,7 +36,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This is the SMTP port used by your application to deliver e-mails to
-    | users of the application. Like the host we have set this value to
+    | user of the application. Like the host we have set this value to
     | stay compatible with the Mailgun e-mail application by default.
     |
     */
@@ -114,7 +114,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | When this option is enabled, e-mail will not actually be sent over the
-    | web and will instead be written to your application's logs files so
+    | web and will instead be written to your application'user logs files so
     | you may inspect the message. This is great for local development.
     |
     */

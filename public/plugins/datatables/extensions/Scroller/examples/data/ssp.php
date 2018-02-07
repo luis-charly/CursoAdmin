@@ -21,7 +21,7 @@
 // DB table to use
 $table = 'massive';
 
-// Table's primary key
+// Table'user primary key
 $primaryKey = 'id';
 
 // Array of database columns which should be read and sent back to DataTables.
@@ -38,7 +38,7 @@ $columns = array(
 
 // SQL server connection information
 $sql_details = array(
-	'user' => '',
+	'users' => '',
 	'pass' => '',
 	'db'   => '',
 	'host' => ''

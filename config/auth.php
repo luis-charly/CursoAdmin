@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | This option controls the authentication driver that will be utilized.
-    | This driver manages the retrieval and authentication of the users
+    | This driver manages the retrieval and authentication of the user
     | attempting to get access to protected areas of your application.
     |
     | Supported: "database", "eloquent"
@@ -23,7 +23,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | When using the "Eloquent" authentication driver, we need to know which
-    | Eloquent model should be used to retrieve your users. Of course, it
+    | Eloquent model should be used to retrieve your user. Of course, it
     | is often just the "User" model but you may use whatever you like.
     |
     */
@@ -36,7 +36,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | When using the "Database" authentication driver, we need to know which
-    | table should be used to retrieve your users. We have chosen a basic
+    | table should be used to retrieve your user. We have chosen a basic
     | default value but you may easily change it to any table you like.
     |
     */

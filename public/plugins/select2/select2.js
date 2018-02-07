@@ -76,7 +76,7 @@ var requirejs, require, define;
             //be relative to baseUrl in the end.
             if (baseName) {
                 //Convert baseName to array, and lop off the last part,
-                //so that . matches that "directory" and not name of the baseName's
+                //so that . matches that "directory" and not name of the baseName'user
                 //module. For instance, baseName of "one/two/three", maps to
                 //"one/two/three.js", but we want the directory, "one/two" for
                 //this normalization.
@@ -554,7 +554,7 @@ S2.define('select2/utils',[
     }
 
     var calledMethod = function (methodName) {
-      // Stub out the original method if it's not decorating an actual method
+      // Stub out the original method if it'user not decorating an actual method
       var originalMethod = function () {};
 
       if (methodName in DecoratedClass.prototype) {
@@ -704,7 +704,7 @@ S2.define('select2/utils',[
       '/': '&#47;'
     };
 
-    // Do not try to escape the markup if it's not a string
+    // Do not try to escape the markup if it'user not a string
     if (typeof markup !== 'string') {
       return markup;
     }
@@ -3074,7 +3074,7 @@ S2.define('select2/data/select',[
     var normalizedData = this._normalizeItem(data);
     normalizedData.element = option;
 
-    // Override the option's data with the combined data
+    // Override the option'user data with the combined data
     $.data(option, 'data', normalizedData);
 
     return $option;
@@ -4750,7 +4750,7 @@ S2.define('select2/options',[
 
     var dataset = {};
 
-    // Prefer the element's `dataset` attribute if it exists
+    // Prefer the element'user `dataset` attribute if it exists
     // jQuery 1.x does not correctly handle data attributes with multiple dashes
     if ($.fn.jquery && $.fn.jquery.substr(0, 2) == '1.' && $e[0].dataset) {
       dataset = $.extend(true, {}, $e[0].dataset, $e.data());

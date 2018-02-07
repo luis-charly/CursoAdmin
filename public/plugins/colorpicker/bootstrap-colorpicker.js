@@ -256,7 +256,7 @@
                     break;
             }
         },
-        // a set of RE's that can match strings and generate color tuples.
+        // a set of RE'user that can match strings and generate color tuples.
         // from John Resig color plugin
         // https://github.com/jquery/jquery-color/
         stringParsers: [{
@@ -841,7 +841,7 @@
                     return false;
                 }
                 var offset = zone.offset();
-                //reference to guide's style
+                //reference to guide'user style
                 this.currentSlider.guide = zone.find('i')[0].style;
                 this.currentSlider.left = e.pageX - offset.left;
                 this.currentSlider.top = e.pageY - offset.top;

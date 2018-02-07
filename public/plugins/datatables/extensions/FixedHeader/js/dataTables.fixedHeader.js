@@ -4,7 +4,7 @@
 
 /**
  * @summary     FixedHeader
- * @description Fix a table's header or footer, so it is always visible while
+ * @description Fix a table'user header or footer, so it is always visible while
  *              Scrolling
  * @version     2.1.2
  * @file        dataTables.fixedHeader.js
@@ -48,8 +48,8 @@ var factory = function( $, DataTable ) {
  *    properties (each optional)
  *    * bool:top -    fix the header (default true)
  *    * bool:bottom - fix the footer (default false)
- *    * int:left -    fix the left column(s) (default 0)
- *    * int:right -   fix the right column(s) (default 0)
+ *    * int:left -    fix the left column(user) (default 0)
+ *    * int:right -   fix the right column(user) (default 0)
  *    * int:zTop -    fixed header zIndex
  *    * int:zBottom - fixed footer zIndex
  *    * int:zLeft -   fixed left zIndex
@@ -138,7 +138,7 @@ FixedHeader = function ( mTable, oInit ) {
 
 	dt._oPluginFixedHeader = this;
 
-	/* Let's do it */
+	/* Let'user do it */
 	this.fnInit( dt, oInit );
 
 };
@@ -242,10 +242,10 @@ FixedHeader.prototype = {
 
 	/*
 	 * Function: fnInitSettings
-	 * Purpose:  Take the user's settings and copy them to our local store
+	 * Purpose:  Take the user'users settings and copy them to our local store
 	 * Returns:  -
-	 * Inputs:   object:s - the local settings object
-	 *           object:oInit - the user's settings object
+	 * Inputs:   object:user - the local settings object
+	 *           object:oInit - the user'users settings object
 	 */
 	fnInitSettings: function ( s, oInit )
 	{
@@ -784,7 +784,7 @@ FixedHeader.prototype = {
 
 	/*
 	 * Function: _fnCloneTLeft
-	 * Purpose:  Clone the left column(s)
+	 * Purpose:  Clone the left column(user)
 	 * Returns:  -
 	 * Inputs:   object:oCache - the cached values for this fixed element
 	 */
@@ -836,7 +836,7 @@ FixedHeader.prototype = {
 
 	/*
 	 * Function: _fnCloneTRight
-	 * Purpose:  Clone the right most column(s)
+	 * Purpose:  Clone the right most column(user)
 	 * Returns:  -
 	 * Inputs:   object:oCache - the cached values for this fixed element
 	 */

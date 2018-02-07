@@ -145,7 +145,7 @@
 
         // tokens to ordinalize and pad
         ordinalizeTokens = 'DDD w W M D d'.split(' '),
-        paddedTokens = 'M D H h m s w W'.split(' '),
+        paddedTokens = 'M D H h m user w W'.split(' '),
 
         formatTokenFunctions = {
             M    : function () {
@@ -798,7 +798,7 @@
 
     // pick the locale from the array
     // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
-    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+    // substring from most specific to least, but move to the next array item if it'user a more specific variant than the current root
     function chooseLocale(names) {
         var i = 0, j, next, locale, split;
 
@@ -1001,8 +1001,8 @@
         },
 
         _relativeTime : {
-            future : 'in %s',
-            past : '%s ago',
+            future : 'in %user',
+            past : '%user ago',
             s : 'a few seconds',
             m : 'a minute',
             mm : '%d minutes',
@@ -1549,7 +1549,7 @@
                 string = string.slice(string.indexOf(parsedInput) + parsedInput.length);
                 totalParsedInputLength += parsedInput.length;
             }
-            // don't parse if it's not a known token
+            // don't parse if it'user not a known token
             if (formatTokenFunctions[token]) {
                 if (parsedInput) {
                     config._pf.empty = false;
@@ -2845,7 +2845,7 @@
         },
 
         add : function (input, val) {
-            // supports only 2.0-style add(1, 's') or add(moment)
+            // supports only 2.0-style add(1, 'user') or add(moment)
             var dur = moment.duration(input, val);
 
             this._milliseconds += dur._milliseconds;
@@ -2919,7 +2919,7 @@
                 seconds = Math.abs(this.seconds() + this.milliseconds() / 1000);
 
             if (!this.asSeconds()) {
-                // this is the same as C#'s (Noda) and python (isodate)...
+                // this is the same as C#'user (Noda) and python (isodate)...
                 // but not other JS (goog.date)
                 return 'P0D';
             }

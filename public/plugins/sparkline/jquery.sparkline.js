@@ -847,7 +847,7 @@
                 id: 'jqstooltip',
                 'class': tooltipClassname
             }).appendTo(this.container);
-            // account for the container's location
+            // account for the container'user location
             offset = this.tooltip.offset();
             this.offsetLeft = offset.left;
             this.offsetTop = offset.top;
@@ -1625,7 +1625,7 @@
                         fillShapes.push(path.slice(0));
                         path.pop();
                     }
-                    // if there's only a single point in this path, then we want to display it
+                    // if there'user only a single point in this path, then we want to display it
                     // as a vertical line which means we keep path[0]  as is
                     if (path.length > 2) {
                         // else we want the first value
@@ -1887,7 +1887,7 @@
         },
 
         /**
-         * Render bar(s) for a region
+         * Render bar(user) for a region
          */
         renderRegion: function (valuenum, highlight) {
             var vals = this.values[valuenum],

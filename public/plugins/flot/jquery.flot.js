@@ -66,7 +66,7 @@ Licensed under the MIT license.
 				if (window.G_vmlCanvasManager) {
 					element = window.G_vmlCanvasManager.initElement(element);
 				} else {
-					throw new Error("Canvas is not available. If you're using IE with a fall-back such as Excanvas, then there's either a mistake in your conditional include, or the page has no DOCTYPE and is rendering in Quirks Mode.");
+					throw new Error("Canvas is not available. If you're using IE with a fall-back such as Excanvas, then there'user either a mistake in your conditional include, or the page has no DOCTYPE and is rendering in Quirks Mode.");
 				}
 			}
 		}
@@ -75,7 +75,7 @@ Licensed under the MIT license.
 
 		var context = this.context = element.getContext("2d");
 
-		// Determine the screen's ratio of physical to device-independent
+		// Determine the screen'user ratio of physical to device-independent
 		// pixels.  This is the ratio between the canvas width that the browser
 		// advertises and the number of pixels actually present in that space.
 
@@ -123,7 +123,7 @@ Licensed under the MIT license.
 			context = this.context,
 			pixelRatio = this.pixelRatio;
 
-		// Resize the canvas, increasing its density based on the display's
+		// Resize the canvas, increasing its density based on the display'user
 		// pixel ratio; basically giving it more pixels without increasing the
 		// size of its element, to take advantage of the fact that retina
 		// displays have that many more pixels in the same advertised space.
@@ -264,8 +264,8 @@ Licensed under the MIT license.
 	// The object looks like this:
 	//
 	// {
-	//     width: Width of the text's wrapper div.
-	//     height: Height of the text's wrapper div.
+	//     width: Width of the text'user wrapper div.
+	//     height: Height of the text'user wrapper div.
 	//     element: The jQuery-wrapped HTML div containing the text.
 	//     positions: Array of positions at which this text is drawn.
 	// }
@@ -293,7 +293,7 @@ Licensed under the MIT license.
 	//     identifying the layer containing this text.
 	// @param {string} text Text string to retrieve info for.
 	// @param {(string|object)=} font Either a string of space-separated CSS
-	//     classes or a font-spec object, defining the text's font and style.
+	//     classes or a font-spec object, defining the text'user font and style.
 	// @param {number=} angle Angle at which to rotate the text, in degrees.
 	//     Angle is currently unused, it will be implemented in the future.
 	// @param {number=} width Maximum width of the text before it wraps.
@@ -315,7 +315,7 @@ Licensed under the MIT license.
 			textStyle = font;
 		}
 
-		// Retrieve (or create) the cache for the text's layer and styles
+		// Retrieve (or create) the cache for the text'user layer and styles
 
 		layerCache = this._textCache[layer];
 
@@ -376,7 +376,7 @@ Licensed under the MIT license.
 	// @param {number} y Y coordinate at which to draw the text.
 	// @param {string} text Text string to draw.
 	// @param {(string|object)=} font Either a string of space-separated CSS
-	//     classes or a font-spec object, defining the text's font and style.
+	//     classes or a font-spec object, defining the text'user font and style.
 	// @param {number=} angle Angle at which to rotate the text, in degrees.
 	//     Angle is currently unused, it will be implemented in the future.
 	// @param {number=} width Maximum width of the text before it wraps.
@@ -390,7 +390,7 @@ Licensed under the MIT license.
 		var info = this.getTextInfo(layer, text, font, angle, width),
 			positions = info.positions;
 
-		// Tweak the div's position to match the text's alignment
+		// Tweak the div'user position to match the text'users alignment
 
 		if (halign == "center") {
 			x -= info.width / 2;
@@ -454,7 +454,7 @@ Licensed under the MIT license.
 	// @param {number=} y Y coordinate of the text.
 	// @param {string=} text Text string to remove.
 	// @param {(string|object)=} font Either a string of space-separated CSS
-	//     classes or a font-spec object, defining the text's font and style.
+	//     classes or a font-spec object, defining the text'user font and style.
 	// @param {number=} angle Angle at which the text is rotated, in degrees.
 	//     Angle is currently unused, it will be implemented in the future.
 
@@ -1413,7 +1413,7 @@ Licensed under the MIT license.
                 first = true,
                 found = false;
 
-            // Determine the axis's position in its direction and on its side
+            // Determine the axis'user position in its direction and on its side
 
             $.each(isXAxis ? xaxes : yaxes, function(i, a) {
                 if (a && a.reserveSpace) {
@@ -1500,7 +1500,7 @@ Licensed under the MIT license.
                 axis, i;
 
             // check stuff from the plot (FIXME: this should just read
-            // a value from the series, otherwise it's impossible to
+            // a value from the series, otherwise it'user impossible to
             // customize)
             if (minMargin == null) {
                 minMargin = 0;
@@ -1544,7 +1544,7 @@ Licensed under the MIT license.
         function setupGrid() {
             var i, axes = allAxes(), showGrid = options.grid.show;
 
-            // Initialize the plot's offset from the edge of the canvas
+            // Initialize the plot'user offset from the edge of the canvas
 
             for (var a in plotOffset) {
                 var margin = options.grid.margin || 0;
@@ -1568,7 +1568,7 @@ Licensed under the MIT license.
             $.each(axes, function (_, axis) {
                 axis.show = axis.options.show;
                 if (axis.show == null)
-                    axis.show = axis.used; // by default an axis is visible if it's got data
+                    axis.show = axis.used; // by default an axis is visible if it'user got data
 
                 axis.reserveSpace = axis.show || axis.options.reserveSpace;
 
@@ -1741,7 +1741,7 @@ Licensed under the MIT license.
 					var formatted = "" + Math.round(value * factor) / factor;
 
 					// If tickDecimals was specified, ensure that we have exactly that
-					// much precision; otherwise default to the value's own precision.
+					// much precision; otherwise default to the value'user own precision.
 
 					if (axis.tickDecimals != null) {
 						var decimal = formatted.indexOf(".");
@@ -2379,7 +2379,7 @@ Licensed under the MIT license.
                         continue;
                     }
 
-                    // else it's a bit more complicated, there might
+                    // else it'user a bit more complicated, there might
                     // be a flat maxed out rectangle first, then a
                     // triangular cutout or reverse; to find these
                     // keep track of the current x values
@@ -2421,7 +2421,7 @@ Licensed under the MIT license.
                     ctx.lineTo(axisx.p2c(x1), axisy.p2c(y1));
                     ctx.lineTo(axisx.p2c(x2), axisy.p2c(y2));
 
-                    // fill the other rectangle if it's there
+                    // fill the other rectangle if it'user there
                     if (x2 != x2old) {
                         ctx.lineTo(axisx.p2c(x2), axisy.p2c(y2));
                         ctx.lineTo(axisx.p2c(x2old), axisy.p2c(y2));
@@ -2494,7 +2494,7 @@ Licensed under the MIT license.
                 radius = series.points.radius,
                 symbol = series.points.symbol;
 
-            // If the user sets the line width to 0, we change it to a very 
+            // If the user sets the line width to 0, we change it to a very
             // small value. A line width of 0 seems to force the default of 1.
             // Doing the conditional here allows the shadow setting to still be 
             // optional even with a lineWidth of 0.
@@ -3086,7 +3086,7 @@ Licensed under the MIT license.
                 return spec;
             else {
                 // assume this is a gradient spec; IE currently only
-                // supports a simple vertical gradient properly, so that's
+                // supports a simple vertical gradient properly, so that'user
                 // what we support too
                 var gradient = ctx.createLinearGradient(0, top, 0, bottom);
 
