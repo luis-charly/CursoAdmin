@@ -1,5 +1,15 @@
 @extends('layouts.admin')
 
+@section('content-header')
+    @if(Session::has('message'))
+
+        <div class="alert alert-warning alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Usuario Editado Correctamente</strong>
+        </div>
+        {{Session::get('message')}}
+    @endif
+
 @section('content')
     <div class="box">
         <div class="box-header">
@@ -84,16 +94,6 @@
         </div>
         <!-- /.box-body -->
     </div>
-
-
-    @section('content-header')
-        <?php $message=Session::get('message')?>
-        @if($message == 'store')
-            <div class="alert alert-warning alert-success">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>¡Usuario Registrado!</strong>
-            </div>
-        @endif
 
     @endsection
 

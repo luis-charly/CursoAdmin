@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use App\User;
 
 class UserController extends Controller
@@ -42,7 +44,7 @@ class UserController extends Controller
             User::create([
             'name' => $request ['name'],
             'email' => $request ['email'],
-            'password' => bcrypt($request ['password']),
+            'password' => $request ['password'],
         ]);
 
         return redirect ('/users')->with('message', 'store');
@@ -68,7 +70,6 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        //var_dump($user);
         return view('users.edit', ['user'=>$user]);
     }
 
@@ -81,7 +82,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+
+        Session::flash('message', 'Usuario Editado Correctamente');
+        return Redirect::to('/users');
     }
 
     /**
