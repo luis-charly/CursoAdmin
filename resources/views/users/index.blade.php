@@ -1,13 +1,15 @@
 @extends('layouts.admin')
 
-@section('content-header')
+    @section('content-header')
     @if(Session::has('message'))
 
-        <div class="alert alert-warning alert-success">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Usuario Editado Correctamente</strong>
+        <div class="alert alert-success alert-dismissible">
+
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {{Session::get('message')}}
+
         </div>
-        {{Session::get('message')}}
+
     @endif
 
 @section('content')

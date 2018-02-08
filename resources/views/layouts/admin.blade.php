@@ -124,8 +124,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu" style="display: none;">
-                        <li><a href="/users/create"><i class="fa fa-circle-o"></i> Agregar y Actualizar</a></li>
-                        <li><a href="/users"><i class="fa fa-circle-o"></i> Tabla</a></li>
+                        <li><a href="{!! URL::to ('/users/create') !!}"><i class="fa fa-circle-o"></i> Agregar</a></li>
+                        <li><a href="{!! URL::to ('/users') !!}"><i class="fa fa-circle-o"></i> Tabla</a></li>
                     </ul>
                 </li>
 

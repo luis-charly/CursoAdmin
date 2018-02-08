@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -39,7 +40,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
             User::create([
             'name' => $request ['name'],
@@ -47,7 +48,7 @@ class UserController extends Controller
             'password' => $request ['password'],
         ]);
 
-        return redirect ('/users')->with('message', 'store');
+        return redirect ('/users')->with('message', 'Usuario Registrado Correctamente');
     }
 
     /**
@@ -80,7 +81,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
         $user = User::find($id);
         $user->fill($request->all());
@@ -98,6 +99,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        Session::flash('message', 'Usuario Eliminado Correctamente');
+        return Redirect::to('/users');
     }
 }
