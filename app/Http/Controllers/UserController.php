@@ -20,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::All();
+        $users = User::paginate(5);
         return view('users.index', compact('users'));
     }
 
@@ -42,11 +42,7 @@ class UserController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-            User::create([
-            'name' => $request ['name'],
-            'email' => $request ['email'],
-            'password' => $request ['password'],
-        ]);
+        User::create($request->all());
 
         return redirect ('/users')->with('message', 'Usuario Registrado Correctamente');
     }
@@ -99,7 +95,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
+        $user = User::find($id);
+        $user->delete();
         Session::flash('message', 'Usuario Eliminado Correctamente');
         return Redirect::to('/users');
     }

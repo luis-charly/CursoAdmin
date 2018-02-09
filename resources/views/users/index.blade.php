@@ -1,21 +1,13 @@
 @extends('layouts.admin')
 
     @section('content-header')
-    @if(Session::has('message'))
-
-        <div class="alert alert-success alert-dismissible">
-
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            {{Session::get('message')}}
-
-        </div>
-
-    @endif
+    @include('alerts.success')
 
 @section('content')
     <div class="box">
         <div class="box-header">
-            <h3 class="box-title">Hover Data Table</h3>
+                <div class="col-sm-3"><h3 class="box-title">Hover Data Table</h3></div>
+                <div class="col-sm-4 col-sm-offset-9"><a href="{{URL::to('/users/create')}}" class="btn btn-primary">Registrar</a></div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -57,46 +49,10 @@
                         </table>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-5">
-                        <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10
-                            of
-                            57 entries
-                        </div>
-                    </div>
-                    <div class="col-sm-7">
-                        <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button previous disabled" id="example2_previous"><a href="#"
-                                                                                                        aria-controls="example2"
-                                                                                                        data-dt-idx="0"
-                                                                                                        tabindex="0">Previous</a>
-                                </li>
-                                <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1"
-                                                                      tabindex="0">1</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2"
-                                                                tabindex="0">2</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3"
-                                                                tabindex="0">3</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4"
-                                                                tabindex="0">4</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5"
-                                                                tabindex="0">5</a></li>
-                                <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6"
-                                                                tabindex="0">6</a></li>
-                                <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2"
-                                                                                       data-dt-idx="7"
-                                                                                       tabindex="0">Next</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                {!! $users->render() !!}
             </div>
         </div>
         <!-- /.box-body -->
     </div>
-
     @endsection
-
 @stop

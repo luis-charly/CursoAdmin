@@ -116,20 +116,13 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MENÚ</li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Usuarios</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
+                <li class="active bd-sidenav-active">
+                    <a href="{!! URL::to ('/users') !!}">
+                        <span>Usuarios</span>
                     </a>
-                    <ul class="treeview-menu" style="display: none;">
-                        <li><a href="{!! URL::to ('/users/create') !!}"><i class="fa fa-circle-o"></i> Agregar</a></li>
-                        <li><a href="{!! URL::to ('/users') !!}"><i class="fa fa-circle-o"></i> Tabla</a></li>
-                    </ul>
                 </li>
-
-
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -140,7 +133,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Dashboard
+                Board
                 <small>Control panel</small>
             </h1>
 
