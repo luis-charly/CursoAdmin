@@ -11,14 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('layouts.admin');
-});
-Route::get('/login', function () {
-    return view('login');
 });
 Route::get('/register', function () {
     return view('register');
 });
 
-Route::resource('/users', 'UserController');
+//Route::get('admin', 'FrontController@admin');
+//Route::get('register', 'FrontController@register');
+
+Route::resource('users', 'UserController');
+Route::resource('log', 'LogController');
+//Route::get('/', 'LogController@index');
