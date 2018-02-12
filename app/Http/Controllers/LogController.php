@@ -19,7 +19,7 @@ class LogController extends Controller
      */
     public function index()
     {
-        return view('login');
+//        return view('login');
     }
 
     /**
@@ -44,6 +44,11 @@ class LogController extends Controller
             return Redirect::to('admin');
         }
         Session::flash('message-error', 'Datos incorrectos');
+        return Redirect::to('/');
+    }
+
+    public function logout(){
+        Auth::logout();
         return Redirect::to('/');
     }
 

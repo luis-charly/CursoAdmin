@@ -28,6 +28,7 @@
 <div class="login-box">
 
     @include('alerts.errors')
+    @include('alerts.request')
 
     <div class="login-logo">
         <a href="#"><b>Sistema</b>Laravel</a>
@@ -36,7 +37,7 @@
         <p class="login-box-msg">Ingrese al sistema</p>
 
 
-        {!! Form::open(['route' => 'login.store', 'method' => 'POST']) !!}
+        {!! Form::open(['route' => 'log.store', 'method' => 'POST']) !!}
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
             <div class="form-group has-feedback">

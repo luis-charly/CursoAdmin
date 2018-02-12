@@ -14,12 +14,21 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function admin()
-    {
-        return view('layouts.admin');
+    public function __construct(){
+        $this->middleware('auth', ['only' => 'admin']);
     }
 
-    public function registro()
+
+    public function index(){
+        return view('login');
+    }
+
+    public function admin()
+    {
+        return view('dashboard.dashboard');
+    }
+
+    public function register()
     {
         return view('registro');
     }
