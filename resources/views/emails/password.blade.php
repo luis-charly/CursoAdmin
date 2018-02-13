@@ -1,0 +1,1 @@
+sigue el link ára resetear tu password {{ url('password/reset/'.$token) }}

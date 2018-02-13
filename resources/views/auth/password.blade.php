@@ -36,8 +36,7 @@
     <div class="login-box-body">
         <p class="login-box-msg">Ingrese al sistema</p>
 
-
-        {!! Form::open(['route' => 'log.store', 'method' => 'POST']) !!}
+        {!! Form::open(['url' => '/password/email']) !!}
         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 
         <div class="form-group has-feedback">
@@ -45,21 +44,13 @@
             {!! Form::text('email',null,['class'=>'form-control', 'placeholder' => 'Ingresa tu correo']) !!}
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
-        <div class="form-group has-feedback">
-            {!! Form::label('Contraseña:') !!}
-            {!! Form::password('password',['class'=>'form-control', 'placeholder' => 'Ingresa tu contraseña']) !!}
-            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-        </div>
 
-        <div class="form-group has-feedback">
+        <div class="row">
             <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+                <button type="submit" class="btn btn-primary btn-block btn-flat">Enviar link</button>
             </div><!-- /.col -->
         </div>
         {!! Form::close() !!}
-        <div class="row">
-            {!! link_to('password/email', $title = '¿Olvidaste tu contraseña?', $atributes = null, $secure = null) !!}
-        </div>
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
 

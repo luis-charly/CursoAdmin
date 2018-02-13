@@ -20,6 +20,10 @@ Route::get('/', 'FrontController@index');
 Route::get('admin', 'FrontController@admin');
 Route::get('register', 'FrontController@register');
 
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
 Route::resource('users', 'UserController');
+Route::resource('email', 'MailController');
 Route::resource('log', 'LogController');
 Route::get('logout', 'LogController@logout');

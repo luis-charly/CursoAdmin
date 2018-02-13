@@ -45,49 +45,48 @@
                                 <tr role="row" class="odd">
                                     <td class="sorting_1">{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
-                                    {{--@if(Auth::user() -> id == 1) Si está logeado en "admin", podrá editar--}}
-                                        {{--<td>--}}
-                                            {!! link_to_route('users.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class' => 'btn btn-primary']) !!}
-                                            <a href="" class="btn btn-danger">Eliminar</a>
+                                    @if(Auth::user() -> id == 1) {{--Si está logeado en "admin", podrá editar--}}
+                                    <td>
+                                        {!! link_to_route('users.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class' => 'btn btn-primary']) !!}
 
-                                            <a href="#myModal" data-toggle="modal" data-name="{{ $user->name }}"
-                                               data-id="{{ $user->id }}" title="Eliminar"
-                                               class="btn btn-red  mb-10 modalDelete"><i
-                                                        class="glyphicon glyphicon-trash"></i><span></span></a>
-                                        </td>
+                                        <a href="#myModal" data-toggle="modal" data-name="{{ $user->name }}"
+                                           data-id="{{ $user->id }}" title="Eliminar"
+                                           class="btn btn-red mb-10 modalDelete"><i
+                                                    class="glyphicon glyphicon-trash"></i><span></span></a>
+                                    </td>
 
-                                        <!— Modal —>
-                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-                                             aria-labelledby="myModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h3 class="modal-title custom-font">Eliminar Cuenta</h3>
-                                                    </div>
-                                                    <div class="modal-body" id="bodyDelete">
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <input type="hidden" name="_token" value="{{csrf_token()}}"
-                                                               id="token">
-                                                        <button class="btn btn-success btn-ef btn-ef-3 btn-ef-3c"
-                                                                data-dismiss="modal" onclick="deleteUser()"><i
-                                                                    class="fa fa-arrow-right"></i> Eliminar
-                                                        </button>
-                                                        <button class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c"
-                                                                data-dismiss="modal"><i class="fa fa-arrow-left"></i>
-                                                            Cancelar
-                                                        </button>
-                                                    </div>
+                                    <!— Modal —>
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3 class="modal-title custom-font">Eliminar Cuenta</h3>
+                                                </div>
+                                                <div class="modal-body" id="bodyDelete">
+                                                    ¿Está seguro de eliminar esta cuenta?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="hidden" name="_token" value="{{csrf_token()}}"
+                                                           id="token">
+                                                    <button class="btn btn-success btn-ef btn-ef-3 btn-ef-3c"
+                                                            data-dismiss="modal" onclick="deleteUser()"><i
+                                                                class="fa fa-arrow-right"></i> Eliminar
+                                                    </button>
+                                                    <button class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c"
+                                                            data-dismiss="modal"><i class="fa fa-arrow-left"></i>
+                                                        Cancelar
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        {{--<td>--}}
-                                        {{--{!! Form::open(['route'=>['users.destroy',$user->id],'method'=>'DELETE']) !!}--}}
-                                        {{--{!! Form::submit('Eliminar',['class'=>'btn btn-danger']) !!}--}}
-                                        {{--{!! Form::close() !!}--}}
-                                        {{--</td>--}}
+                                    {{--<td>--}}
+                                    {{--{!! Form::open(['route'=>['users.destroy',$user->id],'method'=>'DELETE']) !!}--}}
+                                    {{--{!! Form::submit('Eliminar',['class'=>'btn btn-danger']) !!}--}}
+                                    {{--{!! Form::close() !!}--}}
+                                    {{--</td>--}}
 
                                     @endif
                                 </tr>
@@ -96,10 +95,13 @@
                         </table>
                     </div>
                 </div>
-                {!! $users->render() !!}
+                {!! $users->render() !!} {{-- Paginación de la tabla usuarios que está asignada a al array $users --}}
             </div>
         </div>
         <!-- /.box-body -->
     </div>
 @endsection
+    @section('scripts')
+        {!!Html::script("js/script.js")!!}
+    @endsection
 @stop

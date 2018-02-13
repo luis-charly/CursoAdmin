@@ -3,30 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\UserCreateRequest;
-use App\Http\Requests\UserUpdateRequest;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
-use App\User;
 
-class UserController extends Controller
+class MailController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct(){
-        $this->middleware('auth');
-        $this->middleware('admin', ['only' => ['create', 'edit']]);
-    }
-
     public function index()
     {
-        $users = User::paginate(5);
-        return view('users.index', compact('users'));
+        //
     }
 
     /**
@@ -36,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        //
     }
 
     /**
@@ -45,11 +35,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserCreateRequest $request)
+    public function store(Request $request)
     {
-        User::create($request->all());
-
-        return redirect ('/users')->with('message', 'Usuario Registrado Correctamente');
+        //
     }
 
     /**
@@ -71,8 +59,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('users.edit', ['user'=>$user]);
+        //
     }
 
     /**
@@ -82,14 +69,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $user = User::find($id);
-        $user->fill($request->all());
-        $user->save();
-
-        Session::flash('message', 'Usuario Editado Correctamente');
-        return Redirect::to('/users');
+        //
     }
 
     /**
@@ -100,8 +82,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        Session::flash('message', 'Usuario Eliminado Correctamente');
+        //
     }
 }
