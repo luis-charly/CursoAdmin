@@ -29,28 +29,34 @@
 
     @include('alerts.errors')
     @include('alerts.request')
-    @include('alerts.success_email')
 
     <div class="login-logo">
         <a href="#"><b>Sistema</b>Laravel</a>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
 
-        {!! Form::open(['url' => '/password/email']) !!}
-        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-
+        {!! Form::open(['url' => '/password/reset']) !!}
+        {!! Form::hidden('token', $token, null) !!}
         <div class="form-group has-feedback">
             {!! Form::label('Correo:') !!}
-            {!! Form::text('email',null,['class'=>'form-control', 'placeholder' => 'Ingresa tu correo']) !!}
+            {!! Form::text('email',null,['value' => "{{old('email')}}", 'class'=>'form-control', 'placeholder' => 'Ingresa tu correo']) !!}
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            {!! Form::label('Contraseña:') !!}
+            {!! Form::password('password',['class'=>'form-control', 'placeholder' => 'Ingresa tu contraseña']) !!}
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            {!! Form::password('password_confirmation',['class'=>'form-control', 'placeholder' => 'Repite la contraseña']) !!}
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
 
         <div class="row">
             <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Enviar link</button>
+                <button type="submit" class="btn btn-primary btn-flat">Restablecer Contraseña</button>
             </div><!-- /.col -->
         </div>
-
         {!! Form::close() !!}
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->

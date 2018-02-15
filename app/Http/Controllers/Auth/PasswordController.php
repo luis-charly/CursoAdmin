@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Facades\Mail;
 
 class PasswordController extends Controller
 {
@@ -25,6 +27,14 @@ class PasswordController extends Controller
      *
      * @return void
      */
+    protected $redirectPath = 'admin';
+        protected function resetPassword($user,$password){
+            $user->password = $password;
+            $user->save();
+            Auth::login($user);
+
+        }
+
     public function __construct()
     {
         $this->middleware('guest');
