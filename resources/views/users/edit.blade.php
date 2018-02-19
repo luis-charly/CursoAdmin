@@ -7,5 +7,4 @@
         @include('users.forms.text')
         {!! Form::submit('Actualizar',['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
-
 @stop

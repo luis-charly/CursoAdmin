@@ -32,7 +32,6 @@ class PasswordController extends Controller
             $user->password = $password;
             $user->save();
             Auth::login($user);
-
         }
 
     public function __construct()

@@ -54,6 +54,7 @@ return [
     |
     */
 
+
     'from' => ['address' => 'no-reply@sipac.mx', 'name' => 'Luis Carlos Villa R.'],
 
     /*
